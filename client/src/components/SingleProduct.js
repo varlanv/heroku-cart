@@ -20,7 +20,7 @@ class SingleProduct extends Component {
           some text some text some text some text some text some text some text
         </div>
         <div className="add-to-cart">
-          <button type="submit" obClick="q">
+          <button type="submit" onClick="q">
             Add to cart
           </button>
         </div>

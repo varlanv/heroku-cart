@@ -1,12 +1,10 @@
 package com.cvproject.herokushop.model.entity;
 
-import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Data
 public class Product {
     @Id
     @GeneratedValue
@@ -23,6 +21,38 @@ public class Product {
         this.manufactorer = manufactorer;
     }
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getManufactorer() {
+        return manufactorer;
+    }
+
+    public void setManufactorer(String manufactorer) {
+        this.manufactorer = manufactorer;
+    }
 
     @Override
     public String toString() {

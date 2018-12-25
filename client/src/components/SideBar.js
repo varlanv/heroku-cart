@@ -44,7 +44,8 @@ class SideBar extends Component {
      'Content-Type': 'application/json'
    },
     body:JSON.stringify({name:this.state.name, country:this.state.country, manufactorer:this.state.manufactorer})
-   }).then((res) => res.json())
+   }).then((res) => res.json());
+
 
   }
 

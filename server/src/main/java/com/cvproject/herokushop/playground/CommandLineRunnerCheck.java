@@ -11,9 +11,9 @@ import java.util.stream.Stream;
 @Component
 public class CommandLineRunnerCheck implements CommandLineRunner {
 
-    @Autowired
     private final ProductRepository repo;
 
+    @Autowired
     public CommandLineRunnerCheck(ProductRepository repo) {
         this.repo = repo;
     }
