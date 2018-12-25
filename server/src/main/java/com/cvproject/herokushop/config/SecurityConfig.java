@@ -20,6 +20,5 @@
 //                .and()
 //                .logout()
 //                .permitAll();
-//
 //    }
 //}

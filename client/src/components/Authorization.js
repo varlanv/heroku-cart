@@ -5,7 +5,7 @@ class Authorization extends Component {
   render() {
     return (
       <div id="authorization-button">
-        <a href="/a">Sign up</a>
+        <a href="/signup">Sign up</a>
         <a href="/login">Login</a>
       </div>
     );

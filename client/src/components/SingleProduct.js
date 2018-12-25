@@ -13,11 +13,6 @@ class SingleProduct extends Component {
         </div>
         <div className="product-info">
           some text some text some text some text some text some text some text
-          some text some text some text some text some text some text some text
-          some text some text some text some text some text some text some text
-          some text some text some text some text some text some text some text
-          some text some text some text some text some text some text some text
-          some text some text some text some text some text some text some text
         </div>
         <div className="add-to-cart">
           <button type="submit" onClick="q">

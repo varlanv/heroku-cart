@@ -1,4 +1,4 @@
-package com.cvproject.herokushop;
+package com.cvproject.herokushop.playground;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
