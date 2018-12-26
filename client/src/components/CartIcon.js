@@ -12,6 +12,7 @@ class CartIcon extends Component {
             <div className="cart">
                 <button onClick={this.props.handleCartActivation}><i className="fas fa-shopping-cart fa-2x"></i>
                 </button>
+
             </div>
         );
     }

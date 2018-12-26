@@ -7,6 +7,7 @@ class Authorization extends Component {
       <div id="authorization-button">
         <a href="/registration">Sign up</a>
         <a href="/login">Login</a>
+        <a href="/logout">Logout</a>
       </div>
     );
   }
