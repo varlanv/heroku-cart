@@ -34,8 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .failureForwardUrl("/error")
-        ;
+                .failureForwardUrl("/error");
     }
 
     @Autowired
