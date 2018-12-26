@@ -20,11 +20,13 @@ public class CommandLineRunnerCheck implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Product product1 = new Product("Cheese", "Ukraine", "RoofsAndHoofs");
-        Product product2 = new Product("Tea", "England", "Greenfield");
-        Product product3 = new Product("Phone", "China", "Lemon");
-        Product product4 = new Product("Notebook", "USA", "Dell");
+        Product product1 = new Product("Cheese", "Ukraine", "RoofsAndHoofs", "https://picsum.photos/200/200/?random");
+        Product product2 = new Product("Tea", "England", "Greenfield", "https://picsum.photos/201/201/?random");
+        Product product3 = new Product("Phone", "China", "Apple", "https://picsum.photos/202/202/?random");
+        Product product4 = new Product("Notebook", "USA", "Dell", "https://picsum.photos/203/203/?random");
+        Product product5 = new Product("Tablet", "USA", "Asus", "https://picsum.photos/204/204/?random");
+        Product product6 = new Product("Notebook", "China", "Lenovo", "https://picsum.photos/205/205/?random");
 
-        Stream.of(product1, product2, product3, product4).forEach(repo::save);
+        Stream.of(product1, product2, product3, product4, product5, product6).forEach(repo::save);
     }
 }

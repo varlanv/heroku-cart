@@ -20,15 +20,9 @@ class MainContent extends Component {
 
     return (
       <section id="main-content">
-
-        {products.map(product => (
-          <div key={product.id}>
-            {product.name + " "}
-            {product.country + " "}
-            {product.manufactorer+ " "}
-          </div>
-        ))}
-
+          {products.map(product => (
+              <SingleProduct key={product.id} name={product.name} country={product.country} manufacturer={product.manufacturer} imageUrl={product.imageUrl}/>
+          ))}
       </section>
     );
   }

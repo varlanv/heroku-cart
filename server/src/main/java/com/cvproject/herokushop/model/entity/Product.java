@@ -3,6 +3,7 @@ package com.cvproject.herokushop.model.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class Product {
@@ -11,16 +12,35 @@ public class Product {
     private Long id;
     private String name;
     private String country;
-    private String manufactorer;
+    private String manufacturer;
+    private String imageUrl;
+    private BigDecimal price;
 
     public Product(){}
 
-    public Product(String name, String country, String manufactorer) {
+    public Product(String name, String country, String manufacturer, String imageUrl) {
         this.name = name;
         this.country = country;
-        this.manufactorer = manufactorer;
+        this.manufacturer = manufacturer;
+        this.imageUrl = imageUrl;
     }
 
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public Long getId() {
         return id;
@@ -46,20 +66,23 @@ public class Product {
         this.country = country;
     }
 
-    public String getManufactorer() {
-        return manufactorer;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setManufactorer(String manufactorer) {
-        this.manufactorer = manufactorer;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     @Override
     public String toString() {
-        return "id=" + id +
+        return "Product{" +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
-                ", manufactorer='" + manufactorer + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", price=" + price +
                 '}';
     }
 }
