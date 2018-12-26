@@ -37,7 +37,6 @@ class SideBar extends Component {
     }
 
     async handleSubmit(event) {
-
         await fetch("/api/products/add", {
             method: 'POST',
             headers: {

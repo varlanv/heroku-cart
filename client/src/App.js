@@ -1,27 +1,35 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
 
-  state = {};
+        this.handleCartActivation = this.handleCartActivation.bind(this);
+    }
 
-  render() {
-    return (
-      <div id="main-grid">
-        <Header />
-        <SideBar />
-        <MainContent />
+    state = {
+        displayCart: false
+    };
 
-        <Footer />
-      </div>
-    );
-  }
+    handleCartActivation() {
+        this.setState({displayCart: !this.state.displayCart})
+    }
+
+    render() {
+        return (
+            <div id="main-grid">
+                <Header handleCartActivation={this.handleCartActivation}/>
+                <SideBar/>
+                <MainContent displayCart={this.state.displayCart}/>
+
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;

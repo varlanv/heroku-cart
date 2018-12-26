@@ -12,7 +12,7 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@ControllerAdvice
+@ControllerAdvice
 @Component
 public class ExceptionTest extends SimpleMappingExceptionResolver {
 

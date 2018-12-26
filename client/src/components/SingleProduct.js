@@ -9,8 +9,7 @@ class SingleProduct extends Component {
     state = {};
 
     async handleAddToCart(event) {
-        alert(JSON.stringify(this.props));
-        await fetch("/test", {
+        await fetch("/cart/add", {
                 method: "POST",
                 headers: {
                     "accept": "application/json",
@@ -21,7 +20,7 @@ class SingleProduct extends Component {
     }
 
     render() {
-        const {id, imageUrl, name, country, manufacturer} = this.props;
+        const {imageUrl, name, country, manufacturer} = this.props;
 
         return (
             <div className="single-product">

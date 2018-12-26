@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import Authorization from "./Authorization";
 import NavigationBar from "./NavigationBar";
-import Cart from "./Cart";
+import CartIcon from "./CartIcon";
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
   state = {};
   render() {
     return (
@@ -12,7 +15,7 @@ class Header extends Component {
         <SearchBar />
         <Authorization />
         <NavigationBar />
-        <Cart />
+        <CartIcon handleCartActivation={this.props.handleCartActivation}/>
       </header>
     );
   }
