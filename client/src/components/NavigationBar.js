@@ -5,9 +5,10 @@ class NagigationBar extends Component {
   render() {
     return (
       <nav id="main-navigation">
-        <a href="q">github</a>
-        <a href="q">linkedin</a>
-        <a href="q">technologies used</a>
+        <a href="#">github</a>
+        <a href="#">linkedin</a>
+        <a href="#">technologies used</a>
+        <a href="/admin">ADMIN PAGE</a>
       </nav>
     );
   }
