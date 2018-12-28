@@ -1,25 +1,24 @@
-package com.cvproject.herokushop.playground;
+package com.cvproject.herokushop.config;
 
 import com.cvproject.herokushop.model.entity.Product;
 import com.cvproject.herokushop.model.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.util.stream.Stream;
 
-@Component
-public class CommandLineRunnerCheck implements CommandLineRunner {
+public class Initializer implements CommandLineRunner {
 
     private final ProductRepository repo;
 
     @Autowired
-    public CommandLineRunnerCheck(ProductRepository repo) {
+    public Initializer(ProductRepository repo) {
         this.repo = repo;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
         Product product1 = new Product("Cheese", "Ukraine", "RoofsAndHoofs", "https://picsum.photos/200/200/?random");
         Product product2 = new Product("Tea", "England", "Greenfield", "https://picsum.photos/201/201/?random");
         Product product3 = new Product("Phone", "China", "Apple", "https://picsum.photos/202/202/?random");
