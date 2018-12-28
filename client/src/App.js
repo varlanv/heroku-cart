@@ -9,23 +9,47 @@ class App extends Component {
         super(props);
 
         this.handleCartActivation = this.handleCartActivation.bind(this);
+        this.handleRegistrationForm = this.handleRegistrationForm.bind(this);
+        this.handleLoginForm = this.handleLoginForm.bind(this);
     }
 
     state = {
-        displayCart: false
+        displayCart: false,
+        displayRegistrationForm: false,
+        displayLoginForm: false
     };
 
     handleCartActivation() {
-        this.setState({displayCart: !this.state.displayCart})
+        this.setState({
+            displayCart: !this.state.displayCart
+        })
+    }
+
+    handleRegistrationForm() {
+        this.setState({
+            displayRegistrationForm: !this.state.displayRegistrationForm
+        })
+    }
+
+    handleLoginForm() {
+        this.setState({
+            displayLoginForm: !this.state.displayLoginForm
+        })
     }
 
     render() {
         return (
             <div id="main-grid">
-                <Header handleCartActivation={this.handleCartActivation}/>
-                <SideBar/>
-                <MainContent displayCart={this.state.displayCart}/>
+                <Header handleCartActivation={this.handleCartActivation}
+                        handleRegistrationForm={this.handleRegistrationForm}
+                        handleLoginForm={this.handleLoginForm}
+                />
 
+                <SideBar/>
+                <MainContent displayCart={this.state.displayCart}
+                             displayRegistrationForm={this.state.displayRegistrationForm}
+                             displayLoginForm={this.state.displayLoginForm}
+                />
                 <Footer/>
             </div>
         );

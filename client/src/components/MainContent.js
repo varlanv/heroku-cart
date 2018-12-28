@@ -1,10 +1,14 @@
 import React, {Component} from "react";
 import SingleProduct from "./SingleProduct";
 import CartContent from "./CartContent";
+import RegistrationForm from "./RegistrationForm";
+import LoginForm from "./LoginForm";
 
 class MainContent extends Component {
     state = {
         products: [],
+        displayRegistrationForm: this.props.displayRegistrationForm,
+        displayLoginForm: this.props.displayLoginForm
     };
 
     async componentDidMount() {
@@ -15,7 +19,6 @@ class MainContent extends Component {
             products: body,
         });
     }
-
 
 
     render() {
@@ -29,7 +32,15 @@ class MainContent extends Component {
                                    manufacturer={product.manufacturer} imageUrl={product.imageUrl}/>
                 ))}
 
+                {this.props.displayRegistrationForm === true && this.props.displayLoginForm === false ?
+                    <RegistrationForm/> : null}
 
+                {this.props.displayLoginForm === true && this.props.displayRegistrationForm === false ?
+                    <LoginForm/> : null}
+
+
+                {/*{this.props.displayRegistrationForm ? <RegistrationForm/> : null}*/}
+                {/*{this.props.displayLoginForm ? <LoginForm/> : null}*/}
             </section>
         );
     }

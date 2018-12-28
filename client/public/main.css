@@ -87,9 +87,25 @@
     transition: color 0.2s;
     margin-left: 5px;
     margin-right: 5px;
+
 }
 
 #authorization-button a:hover {
+    color: rgb(51, 87, 116);
+}
+
+#authorization-button button {
+    margin-left: 5px;
+    margin-right: 5px;
+    background:none!important;
+    color: rgb(245, 245, 245);
+    border:none;
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+}
+
+#authorization-button button:hover {
     color: rgb(51, 87, 116);
 }
 
@@ -176,3 +192,28 @@
     align-items: center;
     background-color: rgb(88, 177, 236);
 }
+
+
+#registration-wrapper, #login-wrapper{
+    width: 15%;
+    right: 40%;
+    top: 25%;
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 40px 20px 40px 20px;
+    background-color: rgb(238, 238, 238);
+}
+
+#registration-form, #login-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#registration-form input {
+    margin-bottom: 10px;
+}
+#registration-form input[type=submit]{
+
+}
+
