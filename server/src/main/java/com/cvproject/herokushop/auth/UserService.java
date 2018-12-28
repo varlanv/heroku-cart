@@ -21,4 +21,8 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("Invalid username or password");
         } else return new CustomUserDetails(user);
     }
+
+    public void saveUser(User user) {
+        repository.save(user);
+    }
 }

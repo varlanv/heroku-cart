@@ -46,4 +46,18 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
+
+
+    @Override
+    public String toString() {
+        return "username='" + username + '\'' +
+                ", password='" + password + '\'';
+    }
 }

@@ -6,10 +6,7 @@ import java.util.Collection;
 @Entity
 public class Role {
     @Id
-    private Long id;
-    private String role;
-    private String name;
-
+    private String id;
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
 
@@ -21,4 +18,41 @@ public class Role {
             inverseJoinColumns = @JoinColumn(
                     name = "authority_id", referencedColumnName = "id"))
     private Collection<Authority> authorities;
+
+    public Role(String id) {
+        this.id = id;
+    }
+
+    public Role() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Collection<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<User> users) {
+        this.users = users;
+    }
+
+    public Collection<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Collection<Authority> authorities) {
+        this.authorities = authorities;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "id='" + id + '\'';
+    }
 }
