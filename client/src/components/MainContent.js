@@ -31,7 +31,7 @@ class MainContent extends Component {
                 {this.props.displayCart ? <CartContent/> : null}
                 {products.map(product => (
                     <SingleProduct key={product.id} id={product.id} name={product.name} country={product.country}
-                                   manufacturer={product.manufacturer} imageUrl={product.imageUrl}/>
+                                   manufacturer={product.manufacturer} imageUrl={product.imageUrl} price={product.price}/>
                 ))}
 
                 {this.props.displayRegistrationForm === true && this.props.displayLoginForm === false ?

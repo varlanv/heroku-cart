@@ -5,6 +5,10 @@ import com.cvproject.herokushop.model.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api")
 class ProductController {
@@ -25,4 +29,9 @@ class ProductController {
         return repository.save(prod);
     }
 
+    @GetMapping("/products/filter")
+    public Iterable<Product> getAllFiltered(@ModelAttribute Product product) {
+
+        return repository.findAllByName(product.getName());
+    }
 }

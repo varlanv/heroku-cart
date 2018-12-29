@@ -10,6 +10,7 @@ public class Product {
     @Id
     @GeneratedValue
     private Long id;
+    private String description;
     private String name;
     private String country;
     private String manufacturer;
@@ -19,25 +20,10 @@ public class Product {
     public Product(){}
 
     public Product(String name, String country, String manufacturer, String imageUrl) {
+        this.price =  new BigDecimal(Math.random()*1000);
         this.name = name;
         this.country = country;
         this.manufacturer = manufacturer;
-        this.imageUrl = imageUrl;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
@@ -71,6 +57,22 @@ public class Product {
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Override

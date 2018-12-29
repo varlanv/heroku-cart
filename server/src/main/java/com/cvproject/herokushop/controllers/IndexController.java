@@ -10,4 +10,9 @@ public class IndexController {
     public String doGet() {
         return "index";
     }
+
+    @GetMapping("/ankara")
+    public String doGit() {
+        return "index";
+    }
 }

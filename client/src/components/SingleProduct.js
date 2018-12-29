@@ -10,17 +10,17 @@ class SingleProduct extends Component {
 
     async handleAddToCart(event) {
         await fetch("/cart/add", {
-                method: "POST",
-                headers: {
-                    "accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(this.props)
-            });
+            method: "POST",
+            headers: {
+                "accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(this.props)
+        });
     }
 
     render() {
-        const {imageUrl, name, country, manufacturer} = this.props;
+        const {imageUrl, name, country, manufacturer, price} = this.props;
 
         return (
             <div className="single-product">
@@ -28,11 +28,13 @@ class SingleProduct extends Component {
                     <img src={imageUrl}/>
                 </div>
                 <div className="product-info">
-                    {name}
+                    Name: {name}
                     <br/>
-                    {country}
+                    Country: {country}
                     <br/>
-                    {manufacturer}
+                    Manufacturer: {manufacturer}
+                    <br/>
+                    Price: ${price}
                 </div>
                 <div className="add-to-cart">
                     <button type="submit" onClick={this.handleAddToCart}>
