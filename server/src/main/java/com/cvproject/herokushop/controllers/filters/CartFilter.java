@@ -17,10 +17,6 @@ public class CartFilter implements HandlerInterceptor {
         HttpSession session = request.getSession();
         if (session.isNew()) {
 
-            System.out.println(session.getId());
-            System.out.println(session.getId());
-            System.out.println(session.getId());
-
             Enumeration<String> attributeNames = session.getAttributeNames();
             while (attributeNames.hasMoreElements()) {
                 String str = attributeNames.nextElement();
@@ -28,7 +24,6 @@ public class CartFilter implements HandlerInterceptor {
                 System.out.println(str);
                 System.out.println(str);
                 System.out.println(str);
-
             }
             session.setAttribute("cart", new ArrayList<Product>());
         }

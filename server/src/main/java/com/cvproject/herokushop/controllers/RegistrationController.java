@@ -34,7 +34,6 @@ public class RegistrationController {
         userService.saveUser(user);
 
         System.out.println(userService.loadUserByUsername(user.getUsername()));
-        System.out.println(userService.loadUserByUsername(user.getUsername()));
         System.out.println(userService.loadUserByUsername(user.getUsername()).getPassword());
         return "redirect:/";
     }
