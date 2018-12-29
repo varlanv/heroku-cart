@@ -2,7 +2,11 @@ package com.cvproject.herokushop.config;
 
 import com.cvproject.herokushop.auth.*;
 import com.cvproject.herokushop.model.entity.Product;
+import com.cvproject.herokushop.model.entity.User;
+import com.cvproject.herokushop.model.repository.AuthorityRepository;
 import com.cvproject.herokushop.model.repository.ProductRepository;
+import com.cvproject.herokushop.model.repository.RoleRepository;
+import com.cvproject.herokushop.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

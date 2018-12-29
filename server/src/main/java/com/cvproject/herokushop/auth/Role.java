@@ -1,5 +1,7 @@
 package com.cvproject.herokushop.auth;
 
+import com.cvproject.herokushop.model.entity.User;
+
 import javax.persistence.*;
 import java.util.Collection;
 

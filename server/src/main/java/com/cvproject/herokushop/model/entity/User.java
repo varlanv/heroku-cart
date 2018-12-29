@@ -1,4 +1,6 @@
-package com.cvproject.herokushop.auth;
+package com.cvproject.herokushop.model.entity;
+
+import com.cvproject.herokushop.auth.Role;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

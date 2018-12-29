@@ -1,5 +1,7 @@
 package com.cvproject.herokushop.auth;
 
+import com.cvproject.herokushop.model.entity.User;
+import com.cvproject.herokushop.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

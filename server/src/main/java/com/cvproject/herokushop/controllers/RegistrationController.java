@@ -1,6 +1,6 @@
 package com.cvproject.herokushop.controllers;
 
-import com.cvproject.herokushop.auth.User;
+import com.cvproject.herokushop.model.entity.User;
 import com.cvproject.herokushop.auth.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

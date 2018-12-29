@@ -22,8 +22,6 @@ public class CartFilter implements HandlerInterceptor {
                 String str = attributeNames.nextElement();
 
                 System.out.println(str);
-                System.out.println(str);
-                System.out.println(str);
             }
             session.setAttribute("cart", new ArrayList<Product>());
         }
