@@ -5,7 +5,8 @@ class RegistrationForm extends Component {
         super(props);
     }
 
-    state = {};
+    state = {
+    };
 
     render() {
         return (

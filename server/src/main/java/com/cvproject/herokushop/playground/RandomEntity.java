@@ -12,14 +12,13 @@ public class RandomEntity {
     private String firstName;
     private String lastName;
 
-    RandomEntity(){}
+    RandomEntity() {
+    }
 
     public RandomEntity(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-
 
     public Long getId() {
         return id;
@@ -45,10 +44,9 @@ public class RandomEntity {
         this.lastName = lastName;
     }
 
-
     @Override
     public String toString() {
-        return  "id=" + id +
+        return "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';

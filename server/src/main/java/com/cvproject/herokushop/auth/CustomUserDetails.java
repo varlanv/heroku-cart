@@ -3,16 +3,16 @@ package com.cvproject.herokushop.auth;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
-
     private User user;
 
-    public CustomUserDetails(User user) {
+    CustomUserDetails(User user) {
         this.user = user;
     }
 
@@ -26,8 +26,7 @@ public class CustomUserDetails implements UserDetails {
         } else {
             strings.add("USER");
         }
-
-        return null;
+        return Collections.singleton(new SimpleGrantedAuthority("USER"));
     }
 
     @Override
@@ -37,7 +36,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-       return user.getUsername();
+        return user.getUsername();
     }
 
     @Override

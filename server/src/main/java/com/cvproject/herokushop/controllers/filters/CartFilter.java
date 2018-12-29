@@ -30,10 +30,8 @@ public class CartFilter implements HandlerInterceptor {
                 System.out.println(str);
 
             }
-
             session.setAttribute("cart", new ArrayList<Product>());
         }
-
         return true;
     }
 }

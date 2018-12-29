@@ -6,11 +6,11 @@ class LoginForm extends Component {
     }
 
     state = {
-
     };
 
 
     render() {
+
         return (
             <div id="login-wrapper">
                 <form className="login-form" method="post" action="/login">

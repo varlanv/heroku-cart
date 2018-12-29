@@ -1,7 +1,9 @@
 package com.cvproject.herokushop.playground;
 
-
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 class RestControllerCheck {
@@ -18,7 +20,7 @@ class RestControllerCheck {
     }
 
     @PostMapping("/api/post")
-    public RandomEntity insert(@RequestBody RandomEntity user){
+    public RandomEntity insert(@RequestBody RandomEntity user) {
         System.out.println();
         System.out.println(user);
         System.out.println();

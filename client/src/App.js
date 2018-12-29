@@ -26,15 +26,19 @@ class App extends Component {
     }
 
     handleRegistrationForm() {
-        this.setState({
-            displayRegistrationForm: !this.state.displayRegistrationForm
-        })
+        if (this.state.displayLoginForm === false) {
+            this.setState({
+                displayRegistrationForm: !this.state.displayRegistrationForm
+            })
+        }
     }
 
     handleLoginForm() {
-        this.setState({
-            displayLoginForm: !this.state.displayLoginForm
-        })
+        if (this.state.displayRegistrationForm === false) {
+            this.setState({
+                displayLoginForm: !this.state.displayLoginForm
+            })
+        }
     }
 
     render() {

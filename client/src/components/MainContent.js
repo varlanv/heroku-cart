@@ -21,6 +21,8 @@ class MainContent extends Component {
     }
 
 
+
+
     render() {
         const {products} = this.state;
 

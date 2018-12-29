@@ -1,17 +1,26 @@
 package com.cvproject.herokushop.auth;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 
 @Entity
+@Table(name = "usr")
 public class User {
     @Id
     @GeneratedValue
     private Long id;
     @Column(nullable = false, unique = true)
+    @NotNull
+    @Size(min = 4, max = 14)
     private String username;
-    @Column(nullable = false)
+    @Column(nullable = false, length = 60)
+    @NotNull
+    @Size(min = 6, max = 60)
     private String password;
+    @Transient
+    private String passwordConfirm;
 
     @ManyToMany
     @JoinTable(
@@ -21,7 +30,6 @@ public class User {
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
-
 
     public Long getId() {
         return id;
@@ -46,6 +54,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public Collection<Role> getRoles() {
         return roles;
     }
@@ -54,6 +63,13 @@ public class User {
         this.roles = roles;
     }
 
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
 
     @Override
     public String toString() {

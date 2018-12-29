@@ -8,13 +8,10 @@ import java.util.Collection;
 
 @Entity
 public class Authority {
-
     @Id
     @GeneratedValue()
     private Long id;
-
     private String name;
-
     @ManyToMany(mappedBy = "authorities")
     private Collection<Role> roles;
 

@@ -8,6 +8,9 @@
     list-style: none;
 }
 
+body {
+}
+
 #main-grid {
     display: grid;
     min-height: 100vh;

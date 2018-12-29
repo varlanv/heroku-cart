@@ -25,7 +25,6 @@ public class Product {
         this.imageUrl = imageUrl;
     }
 
-
     public BigDecimal getPrice() {
         return price;
     }
