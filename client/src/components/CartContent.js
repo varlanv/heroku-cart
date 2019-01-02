@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 class CartContent extends Component {
     constructor(props) {
         super(props);
+        this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this)
     }
 
     async componentWillMount(event) {
@@ -40,6 +41,17 @@ class CartContent extends Component {
         cartContent: [],
     };
 
+    async handleRemoveFromCart(event) {
+        fetch("cart/remove/1", {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+
+            }
+        )
+    }
 
     render() {
         const {cartContent} = this.state;
@@ -57,6 +69,8 @@ class CartContent extends Component {
                             Manufacturer: {prod.manufacturer}
                             <br/>
                             Price: ${prod.price}
+                            <br/>
+                            <button onClick={this.handleRemoveFromCart}>Remove from cart</button>
                         </li>
                     ))}
                 </ul>
