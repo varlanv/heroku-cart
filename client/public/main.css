@@ -100,10 +100,10 @@ body {
 #authorization-button button {
     margin-left: 5px;
     margin-right: 5px;
-    background:none!important;
+    background: none !important;
     color: rgb(245, 245, 245);
-    border:none;
-    padding:0!important;
+    border: none;
+    padding: 0 !important;
     font: inherit;
     cursor: pointer;
 }
@@ -113,6 +113,9 @@ body {
 }
 
 .cart {
+    position: fixed;
+    left: 94%;
+    top: 45px;
     grid-column: 10 / 11;
     grid-row: 1 / 3;
     display: flex;
@@ -132,16 +135,30 @@ body {
 }
 
 #cart-content {
-    background: red;
-    position: absolute;
-    display: block;
-    }
+    background: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    min-width: 300px;
+}
+
+#cart-content ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.single-cart-item {
+    border: 1px red solid;
+    margin-bottom: 5px;
+}
 
 
 #main-wrapper {
     display: flex;
     min-height: 1200px;
-
     background-color: aqua;
 }
 
@@ -196,8 +213,7 @@ body {
     background-color: rgb(88, 177, 236);
 }
 
-
-#registration-wrapper, #login-wrapper{
+#registration-wrapper, #login-wrapper {
     width: 15%;
     right: 40%;
     top: 25%;
@@ -213,10 +229,12 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
 }
+
 #registration-form input {
     margin-bottom: 10px;
 }
-#registration-form input[type=submit]{
+
+#registration-form input[type=submit] {
 
 }
 

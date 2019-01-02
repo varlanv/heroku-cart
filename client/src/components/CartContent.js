@@ -31,7 +31,6 @@ class CartContent extends Component {
         });
 
 
-
         const body = await query.json();
 
         this.setState({cartContent: body})
@@ -42,18 +41,22 @@ class CartContent extends Component {
     };
 
 
-
-
     render() {
         const {cartContent} = this.state;
         return (
             <div id="cart-content">
                 <ul>
                     {cartContent.map(prod => (
-                        <li key={prod.id}>
-                            {prod.name}
-                            {prod.country}
-                            {prod.manufacturer}
+                        <li className={"single-cart-item"} key={prod.id}>
+                            <img src={prod.imageUrl}/>
+                            <br/>
+                            Name: {prod.name}
+                            <br/>
+                            Country: {prod.country}
+                            <br/>
+                            Manufacturer: {prod.manufacturer}
+                            <br/>
+                            Price: ${prod.price}
                         </li>
                     ))}
                 </ul>

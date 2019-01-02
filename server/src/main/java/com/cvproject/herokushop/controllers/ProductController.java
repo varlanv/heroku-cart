@@ -3,6 +3,7 @@ package com.cvproject.herokushop.controllers;
 import com.cvproject.herokushop.model.entity.Product;
 import com.cvproject.herokushop.model.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -29,9 +30,12 @@ class ProductController {
         return repository.save(prod);
     }
 
+
+
+
     @GetMapping("/products/filter")
     public Iterable<Product> getAllFiltered(@ModelAttribute Product product) {
-
-        return repository.findAllByName(product.getName());
+        return repository.findAll(Example.of(product));
+//        return repository.findAllByName(product.getName());
     }
 }
