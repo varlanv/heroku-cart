@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import CartItem from './CartItem';
 
 class CartContent extends Component {
     constructor(props) {
@@ -31,7 +31,6 @@ class CartContent extends Component {
             }
         });
 
-
         const body = await query.json();
 
         this.setState({cartContent: body})
@@ -41,8 +40,11 @@ class CartContent extends Component {
         cartContent: [],
     };
 
-    async handleRemoveFromCart(event) {
-        fetch("cart/remove/1", {
+    async handleRemoveFromCart(id) {
+        this.setState({
+            cartContent: this.state.cartContent.filter(p => p.id !== id)
+        });
+        fetch("cart/remove/"+id, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
@@ -60,17 +62,7 @@ class CartContent extends Component {
                 <ul>
                     {cartContent.map(prod => (
                         <li className={"single-cart-item"} key={prod.id}>
-                            <img src={prod.imageUrl}/>
-                            <br/>
-                            Name: {prod.name}
-                            <br/>
-                            Country: {prod.country}
-                            <br/>
-                            Manufacturer: {prod.manufacturer}
-                            <br/>
-                            Price: ${prod.price}
-                            <br/>
-                            <button onClick={this.handleRemoveFromCart}>Remove from cart</button>
+                            <CartItem product={prod} handleRemoveFromCart={this.handleRemoveFromCart}/>
                         </li>
                     ))}
                 </ul>

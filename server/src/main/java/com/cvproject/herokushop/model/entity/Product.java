@@ -3,6 +3,7 @@ package com.cvproject.herokushop.model.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -17,6 +18,8 @@ public class Product {
     private String manufacturer;
     private String imageUrl;
     private BigDecimal price;
+    @Transient
+    private Integer amountInCart = 0;
 
     public Product(){}
 
@@ -74,6 +77,14 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Integer getAmountInCart() {
+        return amountInCart;
+    }
+
+    public void setAmountInCart(Integer amountInCart) {
+        this.amountInCart = amountInCart;
     }
 
     @Override

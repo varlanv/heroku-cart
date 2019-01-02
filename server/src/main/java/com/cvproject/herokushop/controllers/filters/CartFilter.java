@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.HashSet;
 
 @Component
 public class CartFilter implements HandlerInterceptor {
@@ -23,7 +25,7 @@ public class CartFilter implements HandlerInterceptor {
 
                 System.out.println(str);
             }
-            session.setAttribute("cart", new ArrayList<Product>());
+            session.setAttribute("cart", new HashMap<Long, Product>());
         }
         return true;
     }
