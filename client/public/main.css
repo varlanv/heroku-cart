@@ -139,7 +139,7 @@ body {
     color: white;
     position: fixed;
     top: 0;
-    min-width: 300px;
+    min-width: 600px;
 }
 
 #cart-content ul {
@@ -153,6 +153,11 @@ body {
 .single-cart-item {
     border: 1px red solid;
     margin-bottom: 5px;
+    min-width:450px;
+}
+
+.single-cart-item img{
+    float: right;
 }
 
 
