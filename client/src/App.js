@@ -20,10 +20,17 @@ class App extends Component {
     };
 
     handleCartActivation() {
-        this.setState({
-            displayCart: !this.state.displayCart
-        })
+        if (this.state.displayCart === false) {
+            this.setState({
+                displayCart: true
+            })
+        } else {
+            this.setState({
+                displayCart: false
+            })
+        }
     }
+
 
     handleRegistrationForm() {
         if (this.state.displayLoginForm === false) {
