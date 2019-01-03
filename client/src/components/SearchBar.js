@@ -8,7 +8,7 @@ class SearchBar extends Component {
         <form action="q" value="qq">
           <input type="text" placeholder="Search" />
           <button type="submit">
-             <i class="fas fa-search"></i>
+             <i className="fas fa-search"></i>
           </button>
         </form>
       </div>

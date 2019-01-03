@@ -1,6 +1,7 @@
 package com.cvproject.herokushop.controllers;
 
 import com.cvproject.herokushop.model.entity.Product;
+import com.cvproject.herokushop.model.jpaspecification.SpecTest;
 import com.cvproject.herokushop.model.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -35,7 +36,7 @@ class ProductController {
 
     @GetMapping("/products/filter")
     public Iterable<Product> getAllFiltered(@ModelAttribute Product product) {
-        return repository.findAll(Example.of(product));
-//        return repository.findAllByName(product.getName());
+        SpecTest productSpecification = new SpecTest(product);
+        return repository.findAll(productSpecification);
     }
 }

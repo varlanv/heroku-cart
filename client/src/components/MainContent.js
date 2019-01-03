@@ -11,7 +11,7 @@ class MainContent extends Component {
         displayLoginForm: this.props.displayLoginForm
     };
 
-    async componentDidMount() {
+    async componentWillMount() {
         const query = await fetch("/api/products");
         const body = await query.json();
 
@@ -19,9 +19,6 @@ class MainContent extends Component {
             products: body,
         });
     }
-
-
-
 
     render() {
         const {products} = this.state;
@@ -31,7 +28,8 @@ class MainContent extends Component {
                 {this.props.displayCart ? <CartContent/> : null}
                 {products.map(product => (
                     <SingleProduct key={product.id} id={product.id} name={product.name} country={product.country}
-                                   manufacturer={product.manufacturer} imageUrl={product.imageUrl} price={product.price}/>
+                                   manufacturer={product.manufacturer} imageUrl={product.imageUrl}
+                                   price={product.price}/>
                 ))}
 
                 {this.props.displayRegistrationForm === true && this.props.displayLoginForm === false ?

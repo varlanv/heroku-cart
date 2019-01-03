@@ -20,17 +20,10 @@ class App extends Component {
     };
 
     handleCartActivation() {
-        if (this.state.displayCart === false) {
-            this.setState({
-                displayCart: true
-            })
-        } else {
-            this.setState({
-                displayCart: false
-            })
-        }
+        this.setState({
+            displayCart: !this.state.displayCart
+        })
     }
-
 
     handleRegistrationForm() {
         if (this.state.displayLoginForm === false) {
@@ -56,7 +49,7 @@ class App extends Component {
                         handleLoginForm={this.handleLoginForm}
                 />
 
-                <SideBar/>
+                <SideBar handleFilter={this.handleFilter}/>
                 <MainContent displayCart={this.state.displayCart}
                              displayRegistrationForm={this.state.displayRegistrationForm}
                              displayLoginForm={this.state.displayLoginForm}

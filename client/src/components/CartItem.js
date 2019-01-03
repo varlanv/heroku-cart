@@ -17,9 +17,9 @@ class CartItem extends Component {
                 <div>Name: {name}</div>
                 <div>Country: {country}</div>
                 <div>Manufacturer: {manufacturer}</div>
-                <div>Price: {price}</div>
+                <div>Price: ${price.toFixed(2)}</div>
                 <div>Amount in cart: {amountInCart}</div>
-                <div>Total price: {price * amountInCart}</div>
+                <div>Total price: ${(price * amountInCart).toFixed(2)}</div>
                 <div>
                     <button onClick={() => this.props.handleAddOne(this.props.product)}>Add one</button>
                     <button onClick={() => this.props.handleRemoveOneFromCart(id)}>Remove one</button>
