@@ -15,8 +15,13 @@ public class CartController {
     @PostMapping("/add")
     public void addToCart(@RequestBody Product prod, HttpSession session) {
         Map<Long, Product> products = (Map<Long, Product>) session.getAttribute("cart");
-        prod.setAmountInCart(prod.getAmountInCart() + 1);
-        products.put(prod.getId(), prod);
+        if (products.containsKey(prod.getId())) {
+            Product product = products.get(prod.getId());
+            product.setAmountInCart(product.getAmountInCart() + 1);
+        } else {
+            prod.setAmountInCart(1);
+            products.put(prod.getId(), prod);
+        }
     }
 
     @GetMapping("/get")
@@ -28,16 +33,40 @@ public class CartController {
 
 
     @DeleteMapping("/remove/{prodId}")
-    public void removeFromCart(@PathVariable("prodId") Long prodId, HttpSession session) {
+    public Set<Product> removeFromCart(@PathVariable("prodId") Long prodId, HttpSession session) {
         Map<Long, Product> products = (Map<Long, Product>) session.getAttribute("cart");
         products.remove(prodId);
+
+        return new HashSet<>(products.values());
     }
 
+
+    @PostMapping("/add-one")
+    public Set<Product> addOneToCart(@RequestBody Product prod, HttpSession session) {
+        Map<Long, Product> products = (Map<Long, Product>) session.getAttribute("cart");
+        if (products.containsKey(prod.getId())) {
+            Product product = products.get(prod.getId());
+            product.setAmountInCart(product.getAmountInCart() + 1);
+        } else {
+            prod.setAmountInCart(1);
+            products.put(prod.getId(), prod);
+        }
+        return new HashSet<>(products.values());
+    }
+
+
+
     @DeleteMapping("/remove-one/{prodId}")
-    public void removeOneFromCart(@PathVariable("prodId") Long prodId, HttpSession session) {
+    public Set<Product> removeOneFromCart(@PathVariable("prodId") Long prodId, HttpSession session) {
         Map<Long, Product> products = (Map<Long, Product>) session.getAttribute("cart");
         Product product = products.get(prodId);
-        product.setAmountInCart(product.getAmountInCart() + 1);
+        if (product.getAmountInCart() == 1) {
+            products.remove(product.getId());
+        } else {
+            product.setAmountInCart(product.getAmountInCart() - 1);
+        }
+        return new HashSet<>(products.values());
+
     }
 
 
