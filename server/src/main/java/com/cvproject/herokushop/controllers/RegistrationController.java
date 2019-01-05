@@ -24,8 +24,6 @@ public class RegistrationController {
 
     @PostMapping(value = "/registration-proceed", produces = "text/html ")
     public String register(@ModelAttribute User user, ModelAndView modelAndView) {
-        System.out.println(user);
-        System.out.println(user);
 
         if (!user.getPassword().equals(user.getPasswordConfirm())) {
             return "redirect:/error";
@@ -33,10 +31,6 @@ public class RegistrationController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.saveUser(user);
 
-        System.out.println(userService.loadUserByUsername(user.getUsername()));
-        System.out.println(userService.loadUserByUsername(user.getUsername()).getPassword());
         return "redirect:/";
     }
-
-
 }

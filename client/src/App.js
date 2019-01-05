@@ -41,6 +41,13 @@ class App extends Component {
         }
     }
 
+   async componentWillMount() {
+        const query = await fetch("/user-info").then(response => response.text());
+        this.setState({
+            username: query
+        })
+    }
+
     render() {
         return (
             <div id="main-grid">

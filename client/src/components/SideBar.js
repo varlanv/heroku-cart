@@ -56,6 +56,7 @@ class SideBar extends Component {
     render() {
         return (
             <aside id="side-bar">
+                Filters<br/>
                 <Filters />
                 {/*<form onSubmit={this.handleSubmit}>*/}
                 {/*<label>*/}

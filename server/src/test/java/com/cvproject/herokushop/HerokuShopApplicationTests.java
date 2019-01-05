@@ -1,7 +1,7 @@
 package com.cvproject.herokushop;
 
 import com.cvproject.herokushop.model.entity.Product;
-import com.cvproject.herokushop.model.jpaspecification.SpecTest;
+import com.cvproject.herokushop.model.jpaspecification.ProductSpec;
 import com.cvproject.herokushop.model.repository.ProductRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,7 +35,7 @@ public class HerokuShopApplicationTests {
         product.setCountry("China");
         product.setName("Cheese");
 
-        SpecTest test = new SpecTest(product);
+        ProductSpec test = new ProductSpec(product);
 
         System.out.println(productRepository.findAll(test));
 

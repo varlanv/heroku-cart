@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpecTest implements Specification {
+public class ProductSpec implements Specification {
 //    public static Specification<Product> filterByName(String name) {
 //        return new Specification<Product>() {
 //            @Override
@@ -41,7 +41,7 @@ public class SpecTest implements Specification {
 
     private Product filter;
 
-    public SpecTest(Product filter) {
+    public ProductSpec(Product filter) {
         this.filter = filter;
     }
 
