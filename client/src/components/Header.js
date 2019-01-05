@@ -17,6 +17,8 @@ class Header extends Component {
                 <SearchBar/>
                 <AuthorizationMenu handleRegistrationForm={this.props.handleRegistrationForm}
                                    handleLoginForm={this.props.handleLoginForm}
+                                   username={this.props.username}
+
                 />
                 <NavigationBar/>
                 <CartIcon handleCartActivation={this.props.handleCartActivation}/>

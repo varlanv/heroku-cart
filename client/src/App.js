@@ -16,7 +16,8 @@ class App extends Component {
     state = {
         displayCart: false,
         displayRegistrationForm: false,
-        displayLoginForm: false
+        displayLoginForm: false,
+        username: "Anonymous"
     };
 
     handleCartActivation() {
@@ -54,6 +55,7 @@ class App extends Component {
                 <Header handleCartActivation={this.handleCartActivation}
                         handleRegistrationForm={this.handleRegistrationForm}
                         handleLoginForm={this.handleLoginForm}
+                        username={this.state.username}
                 />
 
                 <SideBar handleFilter={this.handleFilter}/>

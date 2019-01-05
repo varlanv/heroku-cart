@@ -1,24 +1,21 @@
 import React, {Component} from "react";
 
 class AuthorizationMenu extends Component {
-    state = {
-        username: "qwe"
-    };
-
-    async componentWillMount() {
-        const query = await fetch("/user-info").then(response => response.text());
-        this.setState({
-            username: query
-        })
+    constructor(props){
+        super(props);
     }
+    state = {};
+
 
     render() {
         return (
             <div id="authorization-button">
-                <button id="registration-display" onClick={this.props.handleRegistrationForm}>Sign up</button>
-                <button id="login-display" onClick={this.props.handleLoginForm}>Login</button>
-                <a href="/logout">Logout</a>
-                {this.state.username}
+                {this.props.username === "Anonymous" ?
+                    <button id="registration-display" onClick={this.props.handleRegistrationForm}>Sign
+                        up</button> : null}
+                {this.props.username === "Anonymous" ? <button id="login-display"
+                                                               onClick={this.props.handleLoginForm}>Login</button> : "Welcome " + this.props.username}
+                {this.props.username === "Anonymous" ? null : <a href="/logout">Logout</a>}
 
             </div>
         );
