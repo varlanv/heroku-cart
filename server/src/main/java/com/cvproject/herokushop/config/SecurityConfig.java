@@ -32,11 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
                 .failureUrl("/error")
+                .and()
+                .logout()
+                .deleteCookies("JSESSIONID")
+                .logoutSuccessUrl("/");
 
-
-        ;
     }
-
 
 
     @Bean
@@ -56,7 +57,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-//        return NoOpPasswordEncoder.getInstance();
         return new BCryptPasswordEncoder();
     }
 }

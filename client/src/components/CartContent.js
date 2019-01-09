@@ -7,6 +7,7 @@ class CartContent extends Component {
         this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
         this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
         this.handleAddOne = this.handleAddOne.bind(this);
+        this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
 
     }
 
@@ -90,6 +91,20 @@ class CartContent extends Component {
     }
 
 
+    async handleSubmitPurchase(products) {
+        await fetch("/cart/submit", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(products)
+        });
+        await this.setState({
+            cartContent: []
+        })
+    }
+
     render() {
         const {cartContent} = this.state;
         return (
@@ -103,9 +118,11 @@ class CartContent extends Component {
                         </li>
                     ))}
                 </ul>
+                <button onClick={() => this.handleSubmitPurchase(this.state.cartContent)}>Submit purchase</button>
             </div>
         )
     }
+
 }
 
 export default CartContent;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css"/>
+    <title>Login</title>
+</head>
+<body>
+
+<div id="login-wrapper">
+    <form class="login-form" method="post" action="/login">
+        <h2>Please login</h2>
+        <label htmlFor="username">Username</label>
+        <input type="text" name="username" placeholder="Username"
+               required autoFocus/>
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password"
+               placeholder="Password" required/>
+        <input name="_csrf" type="hidden"/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

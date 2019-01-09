@@ -4,6 +4,7 @@ import com.cvproject.herokushop.model.entity.Product;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -31,6 +32,11 @@ public class CartController {
         return new HashSet<>(products.values());
     }
 
+    @PostMapping("/submit")
+    public void submitPurchase(@RequestBody Iterable<Product> cartProducts, HttpSession session) {
+        Map<Long, Product> cart = (Map<Long, Product>) session.getAttribute("cart");
+        cartProducts.forEach(product -> cart.remove(product.getId()));
+    }
 
     @DeleteMapping("/remove/{prodId}")
     public Set<Product> removeFromCart(@PathVariable("prodId") Long prodId, HttpSession session) {
@@ -53,7 +59,6 @@ public class CartController {
         }
         return new HashSet<>(products.values());
     }
-
 
 
     @DeleteMapping("/remove-one/{prodId}")

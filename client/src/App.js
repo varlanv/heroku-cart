@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
+import AboutInfo from "./components/AboutInfo";
 
 class App extends Component {
     constructor(props) {
@@ -59,6 +60,7 @@ class App extends Component {
                 />
 
                 <SideBar handleFilter={this.handleFilter}/>
+                {/*<AboutInfo/>*/}
                 <MainContent displayCart={this.state.displayCart}
                              displayRegistrationForm={this.state.displayRegistrationForm}
                              displayLoginForm={this.state.displayLoginForm}

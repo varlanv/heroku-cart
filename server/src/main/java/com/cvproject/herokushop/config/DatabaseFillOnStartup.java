@@ -48,8 +48,9 @@ public class DatabaseFillOnStartup implements CommandLineRunner {
         productRepository.saveAll(hardcodedProductList());
     }
 
-    private List<Product>hardcodedProductList() {
+    private List<Product> hardcodedProductList() {
         List<Product> products = new ArrayList<>();
+
         Stream.of(
                 new Product("Cheese", "Ukraine", "RoofsAndHoofs", "https://picsum.photos/200/200/?random"),
                 new Product("Tea", "England", "Greenfield", "https://picsum.photos/201/201/?random"),
