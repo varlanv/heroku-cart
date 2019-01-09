@@ -9,50 +9,49 @@ class AboutInfo extends Component {
     state = {};
 
     render() {
+
+        const display = this.props.displayAboutInfo === true ? null : "display-about-info";
         return (
-            <div id="about">
-                <p>
-                    This project i dedicated to learn following technologies and concepts:
-                    <ul>
-                        <li>
-                            Spring security
-                        </li>
-                        <li>
-                            ReactJS
-                        </li>
-                        <li>
-                            Integrating backend with single-page front end
-                        </li>
-                        <li>
-                            REST API
-                        </li>
-                    </ul>
-                </p>
-<br/>
-                <p>
-                    Full list of farmeworks and technologies used:
-                    <ul>
-                        <li>
-                            Spring boot
-                        </li>
-                        <li>
-                            Spring mvc
-                        </li>
-                        <li>
-                            Spring data
-                        </li>
-                        <li>
-                            Spring security
-                        </li>
-                        <li>
-                            ReactJS
-                        </li>
-                        <li>
-                            AJAX
-                        </li>
-                    </ul>
-                </p>
-                Source code can be found at <a href="https://github.com/varlanv/heroku-shop">https://github.com/varlanv/heroku-shop</a>
+            <div id="about" className={display}>
+                This project i dedicated to learn following technologies and concepts:
+                <ul>
+                    <li>
+                        Spring security
+                    </li>
+                    <li>
+                        ReactJS
+                    </li>
+                    <li>
+                        Integrating backend with single-page front end
+                    </li>
+                    <li>
+                        REST API
+                    </li>
+                </ul>
+                <br/>
+                Full list of farmeworks and technologies used:
+                <ul>
+                    <li>
+                        Spring boot
+                    </li>
+                    <li>
+                        Spring mvc
+                    </li>
+                    <li>
+                        Spring data
+                    </li>
+                    <li>
+                        Spring security
+                    </li>
+                    <li>
+                        ReactJS
+                    </li>
+                    <li>
+                        AJAX
+                    </li>
+                </ul>
+                Source code can be found at <a
+                href="https://github.com/varlanv/heroku-shop">https://github.com/varlanv/heroku-shop</a>
             </div>
         )
     }

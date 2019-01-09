@@ -106,15 +106,18 @@ class CartContent extends Component {
             email: ""
         })
     }
+
     handleEmail(e) {
         this.setState({
             email: e.value
         })
     }
+
     render() {
         const {cartContent} = this.state;
+        const showCart = cartContent.length <= 0 ? "hide-cart" : null;
         return (
-            <div id="cart-content">
+            <div id="cart-content" className={showCart}>
                 <ul>
                     {this.state.cartContent.map(prod => (
                         <li className={"single-cart-item"} key={prod.id}>
@@ -124,7 +127,7 @@ class CartContent extends Component {
                         </li>
                     ))}
                 </ul>
-                <button onClick={() => this.handleSubmitPurchase(this.state.cartContent)}>Submit purchase</button>
+                <button onClick={() => this.handleSubmitPurchase(cartContent)}>Submit purchase</button>
             </div>
         )
     }

@@ -13,7 +13,9 @@ class Filter extends Component {
         return (
             <div>
                     <label>
-                        {this.props.label}<input type="text" name={this.props.filterType}/>
+                        {this.props.label}
+                        <br/>
+                        <input type="text" name={this.props.filterType}/>
                     </label>
             </div>
 

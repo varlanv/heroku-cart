@@ -14,13 +14,15 @@ class Header extends Component {
     render() {
         return (
             <header id="header">
-                <SearchBar/>
+                {/*<SearchBar/>*/}
                 <AuthorizationMenu handleRegistrationForm={this.props.handleRegistrationForm}
                                    handleLoginForm={this.props.handleLoginForm}
                                    username={this.props.username}
 
                 />
-                <NavigationBar/>
+                <NavigationBar handleDisplayAboutInfo={this.props.handleDisplayAboutInfo}
+                               handleDisplayMainContent={this.props.handleDisplayMainContent}
+                />
                 <CartIcon handleCartActivation={this.props.handleCartActivation}/>
             </header>
         );

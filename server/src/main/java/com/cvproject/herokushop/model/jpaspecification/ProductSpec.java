@@ -49,8 +49,6 @@ public class ProductSpec implements Specification {
     public Predicate toPredicate(Root root, CriteriaQuery query, CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicateList = new ArrayList<>();
 
-        Predicate pr = criteriaBuilder.disjunction();
-
         if (filter.getName() != null && !filter.getName().equals("")) {
             predicateList.add((criteriaBuilder.equal(root.get("name"), filter.getName())));
         }

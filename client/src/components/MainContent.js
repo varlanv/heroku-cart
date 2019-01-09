@@ -22,9 +22,10 @@ class MainContent extends Component {
 
     render() {
         const {products} = this.state;
+        const display = this.props.displayMainContent === true ? null : "display-main-content";
 
         return (
-            <section id="main-content">
+            <section id="main-content" className={display}>
                 {this.props.displayCart ? <CartContent/> : null}
                 {products.map(product => (
                     <SingleProduct key={product.id} id={product.id} name={product.name} country={product.country}

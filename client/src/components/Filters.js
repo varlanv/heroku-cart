@@ -32,7 +32,7 @@ class Filters extends Component {
                     <Filter label={"Name"} filterType={"name"}/>
                     <Filter label={"Country"} filterType={"country"}/>
                     <Filter label={"Manufacturer"} filterType={"manufacturer"}/>
-                    <button type="submit">CCCC</button>
+                    <button type="submit">Apply</button>
                 </form>
             </div>
         )
