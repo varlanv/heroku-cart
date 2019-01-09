@@ -21,6 +21,8 @@ public class User {
     @NotNull
     @Size(min = 6, max = 60)
     private String password;
+    @Column(nullable = false)
+    private String email;
     @Transient
     private String passwordConfirm;
 
@@ -71,6 +73,14 @@ public class User {
 
     public void setPasswordConfirm(String passwordConfirm) {
         this.passwordConfirm = passwordConfirm;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

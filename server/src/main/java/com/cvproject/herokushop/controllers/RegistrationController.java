@@ -23,7 +23,7 @@ public class RegistrationController {
     }
 
     @PostMapping(value = "/registration-proceed", produces = "text/html ")
-    public String register(@ModelAttribute User user, ModelAndView modelAndView) {
+    public String register(@ModelAttribute User user) {
 
         if (!user.getPassword().equals(user.getPasswordConfirm())) {
             return "redirect:/error";

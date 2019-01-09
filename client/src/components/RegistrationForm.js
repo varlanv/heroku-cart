@@ -5,8 +5,7 @@ class RegistrationForm extends Component {
         super(props);
     }
 
-    state = {
-    };
+    state = {};
 
     render() {
         return (
@@ -16,6 +15,7 @@ class RegistrationForm extends Component {
                     <label htmlFor="username">Username</label>
                     <input type="text" name="username" placeholder="Username"
                            required autoFocus/>
+                    <input type="email" name="email" placeholder="Email" required/>
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password"
                            placeholder="Password" required/>

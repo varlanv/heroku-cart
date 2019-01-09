@@ -8,6 +8,7 @@ class CartContent extends Component {
         this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
         this.handleAddOne = this.handleAddOne.bind(this);
         this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
+        this.handleEmail = this.handleEmail.bind(this);
 
     }
 
@@ -101,10 +102,15 @@ class CartContent extends Component {
             body: JSON.stringify(products)
         });
         await this.setState({
-            cartContent: []
+            cartContent: [],
+            email: ""
         })
     }
-
+    handleEmail(e) {
+        this.setState({
+            email: e.value
+        })
+    }
     render() {
         const {cartContent} = this.state;
         return (
@@ -122,6 +128,7 @@ class CartContent extends Component {
             </div>
         )
     }
+
 
 }
 

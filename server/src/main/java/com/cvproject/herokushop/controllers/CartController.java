@@ -1,10 +1,14 @@
 package com.cvproject.herokushop.controllers;
 
+import com.cvproject.herokushop.auth.CustomUserDetails;
 import com.cvproject.herokushop.model.entity.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -12,6 +16,8 @@ import java.util.Set;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
+    @Autowired
+    JavaMailSender mailSender;
 
     @PostMapping("/add")
     public void addToCart(@RequestBody Product prod, HttpSession session) {
@@ -34,8 +40,16 @@ public class CartController {
 
     @PostMapping("/submit")
     public void submitPurchase(@RequestBody Iterable<Product> cartProducts, HttpSession session) {
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
         Map<Long, Product> cart = (Map<Long, Product>) session.getAttribute("cart");
         cartProducts.forEach(product -> cart.remove(product.getId()));
+
+        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        mailMessage.setText(cartProducts.toString());
+        mailMessage.setSubject("Your purchase");
+        mailMessage.setTo(userDetails.getEmail());
+        mailSender.send(mailMessage);
     }
 
     @DeleteMapping("/remove/{prodId}")

@@ -66,22 +66,6 @@ public class DatabaseFillOnStartup implements CommandLineRunner {
                 new Product("Phone", "Finland", "Nokia", "https://picsum.photos/211/211/?random"),
                 new Product("Phone", "Korea", "Samsung", "https://picsum.photos/212/212/?random"),
                 new Product("Notebook", "China", "Lenovo", "https://picsum.photos/213/213/?random")
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/214/214/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/215/215/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/216/216/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/218/218/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/219/219/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/220/220/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/221/221/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/222/222/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/223/223/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/224/224/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/225/225/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/226/226/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/227/227/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/228/228/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/229/229/?random"),
-//                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/230/230/?random")
         ).forEach(products::add);
 
         return products;
