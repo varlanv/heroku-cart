@@ -29,7 +29,7 @@ class AboutInfo extends Component {
                     </li>
                 </ul>
                 <br/>
-                Full list of farmeworks and technologies used:
+                Full list of frameworks and technologies used:
                 <ul>
                     <li>
                         Spring boot
@@ -42,6 +42,9 @@ class AboutInfo extends Component {
                     </li>
                     <li>
                         Spring security
+                    </li>
+                    <li>
+                        H2 in-memory database
                     </li>
                     <li>
                         ReactJS

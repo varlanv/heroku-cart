@@ -19,7 +19,9 @@ class RegistrationForm extends Component {
                     <input type="text" name="username" minLength="4" maxLength="20"
                            required autoFocus/>
                     <div>
-                        Email (not necessary, cart content will be sent here as json on cart
+                        Email
+                        <br/>
+                        (not necessary, cart content will be sent on this email in json format on purchase
                         confirmation)
                     </div>
                     <input type="email" name="email"/>
