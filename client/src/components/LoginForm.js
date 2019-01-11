@@ -5,8 +5,7 @@ class LoginForm extends Component {
         super(props);
     }
 
-    state = {
-    };
+    state = {};
 
 
     render() {
@@ -14,13 +13,18 @@ class LoginForm extends Component {
         return (
             <div id="login-wrapper">
                 <form className="login-form" method="post" action="/login">
-                    <h2>Please login</h2>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name="username" placeholder="Username"
+                    <h2>Login:</h2>
+                    <br/>
+                    <div>
+                        <label htmlFor="username">Username</label>
+                    </div>
+                    <input type="text" name="username"
                            required autoFocus/>
-                    <label htmlFor="password">Password</label>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                    </div>
                     <input type="password" name="password"
-                           placeholder="Password" required/>
+                           required/>
                     <input name="_csrf" type="hidden"/>
                     <button type="submit">Submit</button>
                 </form>

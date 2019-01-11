@@ -14,7 +14,7 @@ class AuthorizationMenu extends Component {
                     <button id="registration-display" onClick={this.props.handleRegistrationForm}>Sign
                         up</button> : null}
                 {this.props.username === "Anonymous" ? <button id="login-display"
-                                                               onClick={this.props.handleLoginForm}>Login</button> : "Welcome " + this.props.username}
+                                                               onClick={this.props.handleLoginForm}>Login</button> : "Welcome  " + this.props.username}
                 {this.props.username === "Anonymous" ? null : <a href="/logout">Logout</a>}
 
             </div>

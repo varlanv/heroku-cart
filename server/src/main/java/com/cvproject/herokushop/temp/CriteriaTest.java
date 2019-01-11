@@ -1,4 +1,4 @@
-package com.cvproject.herokushop.playground;
+package com.cvproject.herokushop.temp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

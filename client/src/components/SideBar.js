@@ -6,9 +6,6 @@ class SideBar extends Component {
     render() {
         return (
             <aside id="side-bar">
-                Filters (currently only as json)
-                <br/>
-                <br/>
                 <Filters />
 
             </aside>

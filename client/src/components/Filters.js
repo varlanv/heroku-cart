@@ -11,13 +11,13 @@ class Filters extends Component {
 
 
     submitForm() {
-        var myForm = document.getElementById("filter-form");
+        let myForm = document.getElementById("filter-form");
 
         myForm.addEventListener('submit', function () {
-            var allInputs = myForm.getElementsByTagName('input');
+            let allInputs = myForm.getElementsByTagName('input');
 
-            for (var i = 0; i < allInputs.length; i++) {
-                var input = allInputs[i];
+            for (let i = 0; i < allInputs.length; i++) {
+                let input = allInputs[i];
 
                 if (input.name && !input.value) {
                     input.name = '';
@@ -27,7 +27,10 @@ class Filters extends Component {
     }
     render() {
         return (
-            <div>
+            <div id="filters">
+                Filters (currently only as json)
+                <br/>
+                <br/>
                 <form action="/api/products/filter" method="get" id="filter-form">
                     <Filter label={"Name"} filterType={"name"}/>
                     <Filter label={"Country"} filterType={"country"}/>

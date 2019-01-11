@@ -11,17 +11,28 @@ class RegistrationForm extends Component {
         return (
             <div id="registration-wrapper">
                 <form className="registration-form" method="post" action="/registration-proceed">
-                    <h2>Please sign up</h2>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name="username" placeholder="Username"
+                    <h2>Sign up:</h2>
+                    <br/>
+                    <div>
+                        <label htmlFor="username">Username</label>
+                    </div>
+                    <input type="text" name="username" minLength="4" maxLength="20"
                            required autoFocus/>
-                    <input type="email" name="email" placeholder="Email" required/>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password"
-                           placeholder="Password" required/>
-                    <input type="password" name="passwordConfirm"
-                           placeholder="Confirm password" required/>
+                    <div>
+                        Email (not necessary, cart content will be sent here as json on cart
+                        confirmation)
+                    </div>
+                    <input type="email" name="email"/>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                    </div>
+                    <input type="password" name="password" minLength="6" maxLength="60" required/>
+                    <div>
+                        <label htmlFor="passwordConfirm">Confirm password</label>
+                    </div>
+                    <input type="password" name="passwordConfirm" minLength="6" maxLength="60" required/>
                     <input name="_csrf" type="hidden"/>
+                    <br/>
                     <button type="submit">Submit</button>
                 </form>
             </div>

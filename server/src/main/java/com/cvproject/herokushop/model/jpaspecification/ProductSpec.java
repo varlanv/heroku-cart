@@ -11,34 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductSpec implements Specification {
-//    public static Specification<Product> filterByName(String name) {
-//        return new Specification<Product>() {
-//            @Override
-//            public Predicate toPredicate(Root<Product> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-//                return criteriaBuilder.equal(root.get("name"), name);
-//
-//            }
-//        };
-//    }
-//
-//    public static Specification<Product> filterByCountry(String country) {
-//        return new Specification<Product>() {
-//            @Override
-//            public Predicate toPredicate(Root<Product> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-//                return criteriaBuilder.equal(root.get("country"), country);
-//            }
-//        };
-//    }
-//
-//    public static Specification<Product> filterByManufacturer(String manufacturer) {
-//        return new Specification<Product>() {
-//            @Override
-//            public Predicate toPredicate(Root<Product> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-//                return criteriaBuilder.equal(root.get("manufacturer"), manufacturer);
-//            }
-//        };
-//    }
-
     private Product filter;
 
     public ProductSpec(Product filter) {

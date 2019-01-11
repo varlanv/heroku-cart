@@ -42,9 +42,8 @@ public class CartController {
     public void submitPurchase(@RequestBody Iterable<Product> cartProducts, HttpSession session) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         Map<Long, Product> cart = (Map<Long, Product>) session.getAttribute("cart");
-        cartProducts.forEach(product -> cart.remove(product.getId()));
-
         CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        cartProducts.forEach(product -> cart.remove(product.getId()));
 
         mailMessage.setText(cartProducts.toString());
         mailMessage.setSubject("Your purchase");

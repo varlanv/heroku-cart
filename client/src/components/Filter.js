@@ -11,7 +11,7 @@ class Filter extends Component {
 
     render() {
         return (
-            <div>
+            <div className="single-filter">
                     <label>
                         {this.props.label}
                         <br/>

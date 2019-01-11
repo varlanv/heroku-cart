@@ -15,17 +15,16 @@ public class User {
     private Long id;
     @Column(nullable = false, unique = true)
     @NotNull
-    @Size(min = 4, max = 14)
+    @Size(min = 4, max = 20)
     private String username;
     @Column(nullable = false, length = 60)
     @NotNull
     @Size(min = 6, max = 60)
     private String password;
-    @Column(nullable = false)
+    @Column
     private String email;
     @Transient
     private String passwordConfirm;
-
     @ManyToMany
     @JoinTable(
             name = "users_roles",

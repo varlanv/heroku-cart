@@ -9,18 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserInfoController {
     @GetMapping("/user-info")
     public String getUserInfo() {
-//        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-
-
         try {
             CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
             return userDetails.getUsername();
-        } catch (Exception e) {
-        }
-
+        } catch (Exception e) { /*nop*/}
         return "Anonymous";
-//        return userDetails.getUsername() == null ? "testq" : userDetails.getUsername();
     }
 }

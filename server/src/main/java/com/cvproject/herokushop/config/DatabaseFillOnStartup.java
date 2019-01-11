@@ -3,10 +3,8 @@ package com.cvproject.herokushop.config;
 import com.cvproject.herokushop.auth.Role;
 import com.cvproject.herokushop.auth.Roles;
 import com.cvproject.herokushop.model.entity.Product;
-import com.cvproject.herokushop.model.repository.AuthorityRepository;
 import com.cvproject.herokushop.model.repository.ProductRepository;
 import com.cvproject.herokushop.model.repository.RoleRepository;
-import com.cvproject.herokushop.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -21,8 +19,6 @@ import java.util.stream.Stream;
 public class DatabaseFillOnStartup implements CommandLineRunner {
     private final ProductRepository productRepository;
     private final RoleRepository roleRepository;
-    private final AuthorityRepository authorityRepository;
-    private final UserRepository userRepository;
 
     private Set<Role> getRolesList() {
         Set<Role> roles = new HashSet<>();
@@ -34,11 +30,10 @@ public class DatabaseFillOnStartup implements CommandLineRunner {
     }
 
     @Autowired
-    public DatabaseFillOnStartup(ProductRepository productRepo, RoleRepository roleRepo, AuthorityRepository authorityRepo, UserRepository repository, UserRepository userRepository) {
+    public DatabaseFillOnStartup(ProductRepository productRepo, RoleRepository roleRepo) {
         this.productRepository = productRepo;
         this.roleRepository = roleRepo;
-        this.authorityRepository = authorityRepo;
-        this.userRepository = userRepository;
+
     }
 
     @Override
@@ -52,20 +47,20 @@ public class DatabaseFillOnStartup implements CommandLineRunner {
         List<Product> products = new ArrayList<>();
 
         Stream.of(
-                new Product("Cheese", "Ukraine", "RoofsAndHoofs", "https://picsum.photos/200/200/?random"),
-                new Product("Tea", "England", "Greenfield", "https://picsum.photos/201/201/?random"),
-                new Product("Phone", "China", "Apple", "https://picsum.photos/202/202/?random"),
-                new Product("Notebook", "USA", "Dell", "https://picsum.photos/203/203/?random"),
-                new Product("Tablet", "USA", "Asus", "https://picsum.photos/204/204/?random"),
-                new Product("Cheese", "China", "Lenovo", "https://picsum.photos/205/205/?random"),
-                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/206/206/?random"),
-                new Product("Headphones", "Switzerland", "Logitech", "https://picsum.photos/207/207/?random"),
-                new Product("Notebook", "China", "Acer", "https://picsum.photos/208/208/?random"),
-                new Product("Tablet", "China", "Asus", "https://picsum.photos/209/209/?random"),
-                new Product("Cheese", "Italy", "HoofsAndRoofs", "https://picsum.photos/210/210/?random"),
-                new Product("Phone", "Finland", "Nokia", "https://picsum.photos/211/211/?random"),
-                new Product("Phone", "Korea", "Samsung", "https://picsum.photos/212/212/?random"),
-                new Product("Notebook", "China", "Lenovo", "https://picsum.photos/213/213/?random")
+                new Product("Cheese", "Ukraine", "RoofsAndHoofs", "/img/cheese.png"),
+                new Product("Tea", "England", "Greenfield", "/img/tea.png"),
+                new Product("Phone", "China", "Apple", "/img/phone.png"),
+                new Product("Laptop", "USA", "Dell", "/img/laptop.png"),
+                new Product("Tablet", "USA", "Asus", "/img/tablet.png"),
+                new Product("Cheese", "China", "Lenovo", "/img/cheese.png"),
+                new Product("Laptop", "China", "Lenovo", "/img/laptop.png"),
+                new Product("Headphones", "Switzerland", "Logitech", "/img/headphones.png"),
+                new Product("Laptop", "China", "Acer", "/img/laptop.png"),
+                new Product("Tablet", "China", "Asus", "/img/tablet.png"),
+                new Product("Cheese", "Italy", "HoofsAndRoofs", "/img/cheese.png"),
+                new Product("Phone", "Finland", "Nokia", "/img/phone.png"),
+                new Product("Phone", "Korea", "Samsung", "/img/phone.png"),
+                new Product("Laptop", "China", "Lenovo", "/img/laptop.png")
         ).forEach(products::add);
 
         return products;
