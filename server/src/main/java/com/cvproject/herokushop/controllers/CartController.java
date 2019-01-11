@@ -78,10 +78,12 @@ public class CartController {
     public Set<Product> removeOneFromCart(@PathVariable("prodId") Long prodId, HttpSession session) {
         Map<Long, Product> products = (Map<Long, Product>) session.getAttribute("cart");
         Product product = products.get(prodId);
-        if (product.getAmountInCart() == 1) {
-            products.remove(product.getId());
-        } else {
-            product.setAmountInCart(product.getAmountInCart() - 1);
+        if (product != null) {
+            if (product.getAmountInCart() == 1) {
+                products.remove(product.getId());
+            } else {
+                product.setAmountInCart(product.getAmountInCart() - 1);
+            }
         }
         return new HashSet<>(products.values());
 

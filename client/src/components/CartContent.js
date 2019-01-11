@@ -5,7 +5,7 @@ class CartContent extends Component {
     constructor(props) {
         super(props);
         this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
-        this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
+       this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
         this.handleAddOne = this.handleAddOne.bind(this);
         this.handleRemoveOneFromCart = this.handleRemoveOneFromCart.bind(this);
         this.handleEmail = this.handleEmail.bind(this);
@@ -84,7 +84,7 @@ class CartContent extends Component {
                 }
 
             }
-        ).then(response => response.json());
+        ).then(response => response.json()).catch();
 
         this.setState({
             cartContent: body
